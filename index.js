@@ -27,12 +27,26 @@ function handle(fn) {
     } catch (err) {
       console.error(err);
       const upstreamStatus = err.response?.status;
+      // Info tambahan untuk debugging: header & potongan body dari respons
+      // upstream (Jikan), supaya kelihatan kalau ternyata itu bukan 504 asli
+      // dari Jikan, tapi mis. halaman blokir Cloudflare atau semacamnya.
+      const upstreamServer = err.response?.headers?.server ?? null;
+      const upstreamBodyRaw = typeof err.response?.data === 'string'
+        ? err.response.data
+        : JSON.stringify(err.response?.data ?? '');
+      const upstreamBodySnippet = upstreamBodyRaw ? upstreamBodyRaw.slice(0, 300) : null;
+
       res.status(upstreamStatus === 404 ? 404 : 500).json({
         status: 'Error',
         message: upstreamStatus === 404
           ? 'Data tidak ditemukan di MyAnimeList.'
           : 'Gagal mengambil data dari Jikan API (MyAnimeList).',
         detail: err.message,
+        debug: {
+          upstreamStatus: upstreamStatus ?? null,
+          upstreamServer,
+          upstreamBodySnippet,
+        },
       });
     }
   };
