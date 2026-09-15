@@ -4,6 +4,7 @@ const cors = require('cors');
 const { getHome } = require('./lib/home');
 const { searchAnime } = require('./lib/search');
 const { getAnimeDetail } = require('./lib/detail');
+const { getOfficialStreaming } = require('./lib/jikanClient');
 const { getEpisodeList, getEpisodeDetail } = require('./lib/episode');
 const { getSchedule } = require('./lib/schedule');
 const {
@@ -60,6 +61,7 @@ app.get('/', (req, res) => {
       '/anime/home',
       '/anime/search/:query',
       '/anime/anime/:id',
+      '/anime/anime/:id/streaming',
       '/anime/episode/:id',
       '/anime/episode/:id/:number',
       '/anime/genre',
@@ -79,6 +81,11 @@ app.get('/anime/search/:query', handle((req) => searchAnime(req.params.query, Nu
 
 // :id = MyAnimeList ID (angka), didapat dari field "animeId" di respons lain
 app.get('/anime/anime/:id', handle((req) => getAnimeDetail(req.params.id)));
+
+// Daftar platform streaming LEGAL resmi untuk anime ini (Crunchyroll, dll),
+// kalau MAL punya datanya. Dipakai buat tombol "Tonton" di app -- API ini
+// TIDAK pernah menyediakan link video langsung/embed.
+app.get('/anime/anime/:id/streaming', handle((req) => getOfficialStreaming(req.params.id)));
 
 app.get('/anime/episode/:id', handle((req) => getEpisodeList(req.params.id, Number(req.query.page) || 1)));
 app.get('/anime/episode/:id/:number', handle((req) => getEpisodeDetail(req.params.id, req.params.number)));
