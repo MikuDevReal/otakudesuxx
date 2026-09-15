@@ -1,0 +1,52 @@
+{
+  "ongoing": {
+    "animeList": [
+      {
+        "animeId": "59193",
+        "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+        "titleEnglish": "Mushoku Tensei: Jobless Reincarnation Season 3",
+        "poster": "https://cdn.myanimelist.net/images/anime/1527/158340l.jpg",
+        "episodes": 14,
+        "score": 8.83,
+        "status": "Currently Airing",
+        "type": "TV",
+        "year": 2026,
+        "synopsis": "Third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
+        "genres": ["Adventure", "Drama", "Fantasy", "Ecchi"],
+        "url": "https://myanimelist.net/anime/59193/Mushoku_Tensei_III__Isekai_Ittara_Honki_Dasu"
+      },
+      {
+        "animeId": "49233",
+        "title": "Youjo Senki II",
+        "titleEnglish": "Saga of Tanya the Evil II",
+        "poster": "https://cdn.myanimelist.net/images/anime/1917/158371l.jpg",
+        "episodes": 12,
+        "score": 8.43,
+        "status": "Currently Airing",
+        "type": "TV",
+        "year": 2026,
+        "synopsis": "Second season of Youjo Senki.",
+        "genres": ["Action", "Fantasy", "Military"],
+        "url": "https://myanimelist.net/anime/49233/Youjo_Senki_II"
+      },
+      {
+        "animeId": "62076",
+        "title": "Super no Ura de Yani Suu Futari",
+        "titleEnglish": "Smoking Behind the Supermarket with You",
+        "poster": "https://cdn.myanimelist.net/images/anime/1768/156339l.jpg",
+        "episodes": 12,
+        "score": 8.41,
+        "status": "Currently Airing",
+        "type": "TV",
+        "year": 2026,
+        "synopsis": "The sole thing that gets middle-aged Sasaki through his soul-sucking job.",
+        "genres": ["Romance"],
+        "url": "https://myanimelist.net/anime/62076/Super_no_Ura_de_Yani_Suu_Futari"
+      }
+    ]
+  },
+  "completed": {
+    "animeList": []
+  },
+  "_seedNotice": "Data cadangan statis -- ditampilkan karena Jikan/MyAnimeList sedang tidak bisa dihubungi saat live request. Bukan data real-time."
+}
